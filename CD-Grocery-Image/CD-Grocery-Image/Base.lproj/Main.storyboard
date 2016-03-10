@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DBp-AH-Vjc">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Grocery List-->
+        <scene sceneID="foT-84-FcW">
+            <objects>
+                <tableViewController id="Y86-CT-dYR" customClass="MainTVC" customModule="CD_Grocery_Image" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="jn3-kd-mzr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="W5a-r9-tMM" detailTextLabel="VwD-JU-9aL" imageView="RDk-xt-80n" style="IBUITableViewCellStyleSubtitle" id="qH8-xZ-mdk">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="cell" tableViewCell="qH8-xZ-mdk" id="QxC-Ta-MPT">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="W5a-r9-tMM">
+                                            <rect key="frame" x="73" y="5" width="32" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VwD-JU-9aL">
+                                            <rect key="frame" x="73" y="25" width="41" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="add-basket" id="RDk-xt-80n">
+                                            <rect key="frame" x="15" y="0.0" width="43" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="edit" id="IOJ-ch-frN"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Y86-CT-dYR" id="03i-Rf-OMn"/>
+                            <outlet property="delegate" destination="Y86-CT-dYR" id="kaM-La-38W"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Grocery List" id="zDh-i6-sU7">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="6bK-QN-yjW">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="add" id="aVf-e9-mhH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h6y-6b-JKd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="416" y="362"/>
+        </scene>
+        <!--Add or Edit Item-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="AddEditVC" customModule="CD_Grocery_Image" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Item name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5nF-Tp-Mjt">
+                                <rect key="frame" x="20" y="72" width="560" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="jaw-1s-8im"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Item note" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P1D-Lz-hvo">
+                                <rect key="frame" x="20" y="110" width="560" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="uiF-xS-0u3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Item quantity" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wod-JF-7cF">
+                                <rect key="frame" x="20" y="148" width="560" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="aL9-nO-yhb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAb-Ha-hbD">
+                                <rect key="frame" x="20" y="186" width="239" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="239" id="KIs-Sc-Qf8"/>
+                                    <constraint firstAttribute="height" constant="30" id="LzH-jH-7fC"/>
+                                </constraints>
+                                <state key="normal" title="Add or Edit Image from Device">
+                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addImageFromDevice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3BL-ZH-g8e"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TCJ-N8-YAK">
+                                <rect key="frame" x="20" y="224" width="239" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Onh-jl-nJI"/>
+                                </constraints>
+                                <state key="normal" title="Add or Edit Image from Camera">
+                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addImageFromCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qGd-6F-BOh"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addImage" translatesAutoresizingMaskIntoConstraints="NO" id="khy-oF-eTS">
+                                <rect key="frame" x="140" y="265" width="320" height="320"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="R6o-g8-knu"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="TCJ-N8-YAK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="29U-9M-SCk"/>
+                            <constraint firstItem="Wod-JF-7cF" firstAttribute="top" secondItem="P1D-Lz-hvo" secondAttribute="bottom" constant="8" symbolic="YES" id="57E-KP-4t3"/>
+                            <constraint firstItem="khy-oF-eTS" firstAttribute="top" secondItem="TCJ-N8-YAK" secondAttribute="bottom" constant="11" id="75W-7Y-9MU"/>
+                            <constraint firstItem="yAb-Ha-hbD" firstAttribute="leading" secondItem="Wod-JF-7cF" secondAttribute="leading" id="Bdp-Kb-nVs"/>
+                            <constraint firstItem="5nF-Tp-Mjt" firstAttribute="leading" secondItem="P1D-Lz-hvo" secondAttribute="leading" id="F6e-pW-X4U"/>
+                            <constraint firstItem="Wod-JF-7cF" firstAttribute="centerX" secondItem="khy-oF-eTS" secondAttribute="centerX" id="MHR-2b-xIT"/>
+                            <constraint firstItem="5nF-Tp-Mjt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="ML2-QI-Zcc"/>
+                            <constraint firstItem="P1D-Lz-hvo" firstAttribute="trailing" secondItem="5nF-Tp-Mjt" secondAttribute="trailing" id="PFQ-mC-cZY"/>
+                            <constraint firstItem="TCJ-N8-YAK" firstAttribute="trailing" secondItem="yAb-Ha-hbD" secondAttribute="trailing" id="XAD-Sc-pyH"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="khy-oF-eTS" secondAttribute="bottom" constant="15" id="b2V-Jp-BD6"/>
+                            <constraint firstItem="TCJ-N8-YAK" firstAttribute="top" secondItem="yAb-Ha-hbD" secondAttribute="bottom" constant="8" symbolic="YES" id="eVT-oK-EUx"/>
+                            <constraint firstItem="yAb-Ha-hbD" firstAttribute="leading" secondItem="TCJ-N8-YAK" secondAttribute="leading" id="vmE-tS-hr9"/>
+                            <constraint firstItem="P1D-Lz-hvo" firstAttribute="top" secondItem="5nF-Tp-Mjt" secondAttribute="bottom" constant="8" symbolic="YES" id="w8z-Rv-DpS"/>
+                            <constraint firstItem="5nF-Tp-Mjt" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="wMc-EH-guR"/>
+                            <constraint firstItem="P1D-Lz-hvo" firstAttribute="trailing" secondItem="Wod-JF-7cF" secondAttribute="trailing" id="x4P-9O-fij"/>
+                            <constraint firstItem="yAb-Ha-hbD" firstAttribute="top" secondItem="Wod-JF-7cF" secondAttribute="bottom" constant="8" symbolic="YES" id="yEM-mh-nG3"/>
+                            <constraint firstItem="P1D-Lz-hvo" firstAttribute="leading" secondItem="Wod-JF-7cF" secondAttribute="leading" id="ysH-cb-9gD"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add or Edit Item" id="f7x-IG-mCb">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="8AU-rs-eEG">
+                            <connections>
+                                <action selector="cancelTapped:" destination="BYZ-38-t0r" id="rIJ-wP-Z0t"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Vm8-K1-m48">
+                            <connections>
+                                <action selector="saveTapped:" destination="BYZ-38-t0r" id="lIa-gp-ggy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageHolder" destination="khy-oF-eTS" id="4pe-z5-KzI"/>
+                        <outlet property="itemName" destination="5nF-Tp-Mjt" id="0hA-E2-22c"/>
+                        <outlet property="itemNote" destination="P1D-Lz-hvo" id="UEN-Ne-OmV"/>
+                        <outlet property="itemQty" destination="Wod-JF-7cF" id="Wdm-dk-LCi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1056" y="378"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="sR4-1t-UAG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DBp-AH-Vjc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="E2i-C1-ef7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y86-CT-dYR" kind="relationship" relationship="rootViewController" id="Bze-rM-okQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cGy-mr-AM8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-278" y="362"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="add-basket" width="512" height="512"/>
+        <image name="addImage" width="240" height="240"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="aVf-e9-mhH"/>
+    </inferredMetricsTieBreakers>
+    <color key="tintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+</document>
